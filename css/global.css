@@ -507,6 +507,7 @@ ul {
     transition: var(--transition);
 }
 
+/*footer social icon hover*/
 .footer-social-icon:hover {
     background: var(--accent-color);
     color: #fff;
