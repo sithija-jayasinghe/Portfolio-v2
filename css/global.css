@@ -341,17 +341,49 @@ ul {
     color: #fff;
 }
 
+/* Mobile Nav Home Link - Hidden on Desktop */
+.mobile-home-link {
+    display: none;
+}
+
 @media (max-width: 768px) {
     .main-header {
-        width: 95%;
-        bottom: 24px;
+        width: 100%; /* Full width pill */
+        max-width: none;
+        bottom: 0px; /* Stick to bottom edge */
+        padding: 0 16px 16px; /* Padding for safe area */
         top: auto;
     }
     
+    .main-header nav {
+        justify-content: center;
+        padding: 12px 20px;
+        box-shadow: 0 -4px 20px rgba(0,0,0,0.1); /* Shadow acting upwards */
+    }
+
+    /* Hide the brand text "Harshana." on mobile */
+    .main-header nav > .nav-link:first-child {
+        display: none;
+    }
+
+    /* Show the Home link on mobile */
+    .mobile-home-link {
+        display: block;
+    }
+
     .nav-links {
         display: flex;
-        gap: 16px;
+        width: 100%;
+        justify-content: space-between; /* Spread links evenly */
+        gap: 0;
     }
+
+    /* Adjust link sizing for small screens */
+    .nav-link {
+        font-size: 0.85rem;
+        padding: 4px;
+    }
+
 }
 
 /* Global Footer */
