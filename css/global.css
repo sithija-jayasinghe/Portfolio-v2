@@ -353,12 +353,21 @@ ul {
         bottom: 0px; /* Stick to bottom edge */
         padding: 0 16px 16px; /* Padding for safe area */
         top: auto;
+        left: 0;
+        transform: none;
     }
     
+    /* Reset transparency on mobile for better readability */
     .main-header nav {
         justify-content: center;
         padding: 12px 20px;
         box-shadow: 0 -4px 20px rgba(0,0,0,0.1); /* Shadow acting upwards */
+        background: var(--bg-secondary); /* Solid background on mobile */
+    }
+
+    /* Fix Sticky Header 'Hide' on Mobile - Slide Down instead of Up */
+    .main-header.header-hidden {
+        transform: translateY(100%);
     }
 
     /* Hide the brand text "Harshana." on mobile */

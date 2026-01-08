@@ -1,0 +1,111 @@
+/* Case Study Page Styles */
+.case-hero {
+    text-align: center;
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.case-image-container {
+    width: 100%;
+    height: 400px;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    margin-bottom: 40px;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    background: var(--bg-secondary);
+}
+
+.case-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.case-meta {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.meta-item {
+    background: var(--bg-secondary);
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+}
+
+.case-section {
+    margin-bottom: 80px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.case-image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.case-screenshot {
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    background: var(--bg-secondary);
+    aspect-ratio: 16/10;
+    overflow: hidden;
+}
+
+.case-screenshot:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.tech-stack-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.tech-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: var(--card-bg);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    text-align: center;
+    gap: 12px;
+}
+
+.tech-icon {
+    width: 32px;
+    height: 32px;
+    color: var(--accent-color);
+}
+
+.gallery-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .case-image-container {
+        height: 250px;
+    }
+}
