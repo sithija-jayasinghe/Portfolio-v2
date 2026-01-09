@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyScope Weather - Case Study | Harshana</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/case-study.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <nav>
+            <a href="index.html" class="nav-link">Harshana.</a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link mobile-home-link">Home</a>
+                <a href="projects.html" class="nav-link active">Work</a>
+                <a href="index.html#articles" class="nav-link">Articles</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <button id="theme-toggle" aria-label="Toggle light and dark theme">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-sun">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-moon">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main style="padding-top: 120px;">
+        <article class="section-padding">
+            <header class="case-hero reveal">
+                <h1 class="text-large">SkyScope Weather.</h1>
+                <div class="case-meta">
+                    <span class="meta-item">Dashboard</span>
+                    <span class="meta-item">External APIs</span>
+                    <span class="meta-item">Data Vis</span>
+                    <span class="meta-item">2024</span>
+                </div>
+                <div class="case-image-container">
+                    <img src="assets/weatherapp.png" alt="SkyScope Dashboard">
+                </div>
+                <div style="display: flex; gap: 16px; justify-content: center;">
+                    <a href="https://github.com/sithija-jayasinghe/SkyScope--Weather-Dashboard" target="_blank"
+                        class="cta-button">View Code</a>
+                </div>
+            </header>
+
+            <section class="case-section reveal">
+                <h2 class="section-title">The Problem</h2>
+                <p class="section-description">
+                    Most weather dashboards are static and boring. I wanted to build a dynamic dashboard that not only
+                    shows the current weather but also visualizes data trends like temperature changes and humidity
+                    levels over time, providing a deeper insight into weather patterns.
+                </p>
+            </section>
+
+            <section class="case-section reveal">
+                <h2 class="section-title">The Tech Stack</h2>
+                <div class="tech-stack-grid">
+                    <div class="tech-item"><span>JavaScript</span></div>
+                    <div class="tech-item"><span>Chart.js</span></div>
+                    <div class="tech-item"><span>OpenWeather API</span></div>
+                    <div class="tech-item"><span>CSS Grid</span></div>
+                </div>
+            </section>
+
+            <section class="case-section reveal">
+                <h2 class="section-title">Key Challenges</h2>
+                <ul style="list-style-type: disc; padding-left: 20px; color: var(--text-secondary); line-height: 1.8;">
+                    <li style="margin-bottom: 12px;"><strong>API Integration:</strong> Fetching and synchronizing data
+                        from multiple endpoints (Current Weather and 5-Day Forecast) to display a cohesive dashboard.
+                    </li>
+                    <li style="margin-bottom: 12px;"><strong>Data Visualization:</strong> Using Chart.js to render
+                        interactive graphs that update dynamically based on the selected city.</li>
+                    <li style="margin-bottom: 12px;"><strong>Error Handling:</strong> Managing API rate limits and
+                        handling cases where city names are invalid or data is unavailable.</li>
+                </ul>
+            </section>
+
+            <section class="case-section reveal">
+                <h2 class="section-title">The Result</h2>
+                <p class="section-description">A rich, interactive weather experience that goes beyond simple numbers.
+                </p>
+                <div class="case-image-grid">
+                    <div class="case-screenshot">
+                        <div class="gallery-placeholder">Screenshot: Main Dashboard</div>
+                    </div>
+                    <div class="case-screenshot">
+                        <div class="gallery-placeholder">Screenshot: Mobile View</div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div><a href="index.html" class="footer-brand">Harshana.</a>
+                <p style="color: var(--text-secondary);">Building digital experiences with modular code.</p>
+            </div>
+            <nav class="footer-nav">
+                <a href="index.html" class="footer-link">Home</a>
+                <a href="projects.html" class="footer-link">Work</a>
+                <a href="about.html" class="footer-link">About</a>
+                <a href="contact.html" class="footer-link">Contact</a>
+            </nav>
+            <div class="footer-copyright">&copy; 2026 Harshana Jayasinghe. All rights reserved.</div>
+        </div>
+    </footer>
+    <script src="js/global.js"></script>
+</body>
+
+</html>
