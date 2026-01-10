@@ -116,4 +116,44 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // Custom Cursor Logic
+    const cursorDot = document.createElement('div');
+    const cursorOutline = document.createElement('div');
+
+    cursorDot.className = 'cursor-dot';
+    cursorOutline.className = 'cursor-outline';
+
+    document.body.appendChild(cursorDot);
+    document.body.appendChild(cursorOutline);
+
+    window.addEventListener('mousemove', function (e) {
+        const posX = e.clientX;
+        const posY = e.clientY;
+
+        // Dot follows instantly
+        cursorDot.style.left = `${posX}px`;
+        cursorDot.style.top = `${posY}px`;
+
+        // Outline follows with slight delay (animation handled in CSS)
+        cursorOutline.animate({
+            left: `${posX}px`,
+            top: `${posY}px`
+        }, { duration: 500, fill: "forwards" });
+    });
+
+    // Hover effect for links and buttons
+    const interactiveElements = document.querySelectorAll('a, button, .service-card, .project-card');
+
+    interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            cursorOutline.classList.add('hover');
+            cursorDot.classList.add('hover');
+        });
+
+        el.addEventListener('mouseleave', () => {
+            cursorOutline.classList.remove('hover');
+            cursorDot.classList.remove('hover');
+        });
+    });
 });
