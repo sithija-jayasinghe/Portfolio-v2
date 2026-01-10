@@ -296,6 +296,8 @@ ul {
 .reveal.active .reveal-item:nth-child(2) { transition-delay: 0.2s; }
 .reveal.active .reveal-item:nth-child(3) { transition-delay: 0.3s; }
 .reveal.active .reveal-item:nth-child(4) { transition-delay: 0.4s; }
+.reveal.active .reveal-item:nth-child(5) { transition-delay: 0.5s; }
+.reveal.active .reveal-item:nth-child(6) { transition-delay: 0.6s; }
 
 /* Squish Effects */
 .cta-button:active, 
@@ -550,5 +552,55 @@ ul {
 .service-card p {
     font-size: 0.95rem;
     color: var(--text-secondary);
-    line-height: 1.6;
+}
+/* Aurora Background Animation */
+.aurora-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.aurora-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+    animation: aurora-float 10s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.aurora-1 {
+    width: 300px;
+    height: 300px;
+    background: var(--accent-color);
+    top: -50px;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.aurora-2 {
+    width: 400px;
+    height: 400px;
+    background: #5eacff; /* Soft Blue */
+    bottom: -100px;
+    right: 10%;
+    animation-delay: -5s;
+    opacity: 0.3;
+}
+
+[data-theme="dark"] .aurora-blob {
+    opacity: 0.15; /* Subtle in dark mode */
+}
+
+@keyframes aurora-float {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    100% {
+        transform: translate(20px, -40px) scale(1.1);
+    }
 }

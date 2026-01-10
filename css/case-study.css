@@ -104,8 +104,55 @@
     font-size: 0.9rem;
 }
 
-@media (max-width: 768px) {
     .case-image-container {
         height: 250px;
+    }
+}
+
+/* Next Project Navigation */
+.next-project-section {
+    margin-top: 100px;
+    padding-top: 60px;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.next-label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+    display: block;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.next-project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.next-project-link:hover {
+    color: var(--accent-color);
+    transform: translateX(10px);
+}
+
+.next-project-link svg {
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.next-project-link:hover svg {
+    transform: translateX(6px);
+}
+
+@media (max-width: 768px) {
+    .next-project-link {
+        font-size: 1.5rem;
     }
 }
