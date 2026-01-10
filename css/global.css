@@ -188,6 +188,19 @@ ul {
     box-shadow: 0 8px 24px rgba(255, 149, 0, 0.4);
 }
 
+.cta-button.secondary {
+    background: transparent;
+    border: 2px solid var(--accent-color);
+    color: var(--text-primary);
+    box-shadow: none;
+}
+
+.cta-button.secondary:hover {
+    background: var(--accent-color);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(255, 149, 0, 0.3);
+}
+
 /* Common Card Styles */
 .project-card, .article-card {
     background: var(--card-bg);
