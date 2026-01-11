@@ -156,4 +156,26 @@ document.addEventListener('DOMContentLoaded', () => {
             cursorDot.classList.remove('hover');
         });
     });
+
+    // Image Skeleton Loader Logic
+    const skeletonImages = document.querySelectorAll('.skeleton-img');
+
+    skeletonImages.forEach(img => {
+        // If image is already loaded (cached)
+        if (img.complete) {
+            img.classList.remove('skeleton');
+            img.classList.add('loaded');
+        } else {
+            // Otherwise wait for load
+            img.addEventListener('load', () => {
+                img.classList.remove('skeleton');
+                img.classList.add('loaded');
+            });
+            img.addEventListener('error', () => {
+                // Remove skeleton even on error so it doesn't shimmer forever
+                img.classList.remove('skeleton');
+            });
+        }
+    });
+
 });
