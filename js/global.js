@@ -196,11 +196,17 @@ document.addEventListener('DOMContentLoaded', () => {
             const rotateY = ((x - centerX) / centerX) * 5;
 
             card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+
+            // Spotlight Effect: Set CSS variables
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
         });
 
         card.addEventListener('mouseleave', () => {
             // Reset transformation
             card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+            card.style.setProperty('--mouse-x', '-9999px'); // Hide spotlight
+            card.style.setProperty('--mouse-y', '-9999px');
         });
 
         // Add transition for smooth reset (optional, can be done in CSS)

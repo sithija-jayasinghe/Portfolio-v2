@@ -577,10 +577,46 @@ ul {
 
 /* 3D Tilt Support */
 .project-card, .service-card {
-    will-change: transform;
     transform-style: preserve-3d;
     /* transition is handled in JS for mousemove, but we need a generic one for other props */
+    position: relative;
+    /* overflow: hidden;  <-- This might clip 3D tilt if not careful, but usually needed for spotlight containment. 
+       Actually, spotlight should be an overlay. */
 }
+
+/* Spotlight Effect Layer */
+.project-card::after, .service-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit; /* Follow card radius */
+    z-index: 2; /* Above content but below interactive buttons if any? No, usually pointer-events: none */
+    pointer-events: none;
+    background: radial-gradient(
+        600px circle at var(--mouse-x, -9999px) var(--mouse-y, -9999px),
+        rgba(255, 255, 255, 0.1),
+        transparent 40%
+    );
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.project-card:hover::after, .service-card:hover::after {
+    opacity: 1;
+}
+
+/* Dark mode tweak for spotlight */
+[data-theme="dark"] .project-card::after, [data-theme="dark"] .service-card::after {
+    background: radial-gradient(
+        600px circle at var(--mouse-x, -9999px) var(--mouse-y, -9999px),
+        rgba(255, 255, 255, 0.08),
+        transparent 40%
+    );
+}
+
 
 /* Override existing hover transform if it conflicts */
 .project-card:hover, .service-card:hover {
