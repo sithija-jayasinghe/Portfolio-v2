@@ -701,10 +701,12 @@ ul {
 }
 
 /* Hide custom cursor on mobile to prevent touch issues */
+@media (max-width: 1024px) {
     .cursor-dot, .cursor-outline {
         display: none;
     }
 }
+
 
 /* Skeleton Loading State */
 .skeleton {
