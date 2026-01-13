@@ -609,13 +609,16 @@ ul {
 }
 
 /* Dark mode tweak for spotlight */
-[data-theme="dark"] .project-card::after, [data-theme="dark"] .service-card::after {
-    background: radial-gradient(
-        600px circle at var(--mouse-x, -9999px) var(--mouse-y, -9999px),
-        rgba(255, 255, 255, 0.08),
-        transparent 40%
-    );
+/* Page Transition Styles */
+body {
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
 }
+
+body.loaded {
+    opacity: 1;
+}
+
 
 
 /* Override existing hover transform if it conflicts */

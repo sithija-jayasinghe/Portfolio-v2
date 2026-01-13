@@ -216,4 +216,40 @@ document.addEventListener('DOMContentLoaded', () => {
     // The inline style set by JS will override simple CSS transforms, but transitions should be careful.
 });
 
+// Seamless Page Transitions 
+// 1. Fade in on load
+// Timeout ensures the transition triggers even if browser renders fast
+setTimeout(() => {
+    document.body.classList.add('loaded');
+}, 50);
+
+// 2. Intercept links for Fade Out
+document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        const target = this.getAttribute('target');
+
+        // Allow filtered project links (href="#") or new tab links
+        if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || target === '_blank') {
+            return;
+        }
+
+        e.preventDefault();
+        document.body.classList.remove('loaded');
+
+        setTimeout(() => {
+            window.location.href = href;
+        }, 400); // Match CSS transition duration
+    });
+});
+
+// 3. Fix for Back Button (bfcache)
+window.addEventListener('pageshow', function (event) {
+    if (event.persisted) {
+        document.body.classList.add('loaded');
+    }
+});
+
+
+
 
