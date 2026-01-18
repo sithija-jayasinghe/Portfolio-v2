@@ -464,6 +464,7 @@ ul {
     display: block;
 }
 
+/*Footer Nav*/
 .footer-nav {
     display: flex;
     gap: 24px;
