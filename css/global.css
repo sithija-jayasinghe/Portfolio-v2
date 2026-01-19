@@ -476,6 +476,7 @@ ul {
     padding: 0;
 }
 
+/*Footer Link*/
 .footer-link {
     color: var(--text-secondary);
     font-size: 0.95rem;
