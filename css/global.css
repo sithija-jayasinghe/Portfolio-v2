@@ -483,6 +483,7 @@ ul {
     transition: var(--transition);
 }
 
+/*Footer Link Hover*/
 .footer-link:hover {
     color: var(--accent-color);
 }
