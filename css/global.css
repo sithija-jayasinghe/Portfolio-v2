@@ -338,6 +338,17 @@ ul {
     transition: transform 0.1s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
+/* Magnetic Button Styles */
+.magnetic-active {
+    transition: transform 0.1s linear !important; /* Fast follow when active */
+    display: inline-block; /* Required for transform */
+}
+
+/* Override default slow transitions for magnetic targets so they snap back elastically */
+.cta-button, .nav-link, .social-link, #theme-toggle, .view-link {
+    transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
 /* Back To Top Button */
 #back-to-top {
     position: fixed;
