@@ -112,7 +112,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // Back To Top Logic
         if (backToTopBtn) {
             if (currentScrollY > 600) {
                 backToTopBtn.classList.add('visible');
@@ -124,7 +123,6 @@ document.addEventListener('DOMContentLoaded', () => {
         lastScrollY = currentScrollY;
     }, { passive: true });
 
-    // Back To Top Click
     if (backToTopBtn) {
         backToTopBtn.addEventListener('click', () => {
             window.scrollTo({
