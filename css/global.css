@@ -338,11 +338,7 @@ ul {
     transition: transform 0.1s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-/* Magnetic Button Styles */
-.magnetic-active {
-    transition: transform 0.1s linear !important; /* Fast follow when active */
-    display: inline-block; /* Required for transform */
-}
+
 
 /* Override default slow transitions for magnetic targets so they snap back elastically */
 .cta-button, .nav-link, .social-link, #theme-toggle, .view-link {
@@ -519,6 +515,7 @@ ul {
 
 @media (max-width: 768px) {
     .site-footer {
+        padding-bottom: 80px; /* Space for mobile nav */
     }
 }
 
@@ -712,6 +709,7 @@ body.loaded {
     margin-bottom: 24px;
     background: linear-gradient(135deg, var(--text-primary), var(--text-secondary));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     letter-spacing: -4px;
 }

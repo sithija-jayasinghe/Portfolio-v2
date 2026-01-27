@@ -228,31 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
         card.style.transition = 'transform 0.1s ease-out';
     });
 
-    // --- Magnetic Buttons Implementation ---
-    const magneticElements = document.querySelectorAll('.cta-button, .nav-link, .social-link, #theme-toggle, .view-link');
 
-    // Only apply on desktop
-    if (window.matchMedia("(min-width: 1024px)").matches) {
-        magneticElements.forEach(el => {
-            el.addEventListener('mousemove', (e) => {
-                const rect = el.getBoundingClientRect();
-                const x = e.clientX - rect.left - rect.width / 2;
-                const y = e.clientY - rect.top - rect.height / 2;
-
-                // Strength factor - how far the button moves relative to cursor
-                // We use different strengths for X and Y for a more natural feel
-                const strength = 0.5;
-
-                el.style.transform = `translate(${x * strength}px, ${y * strength}px) scale(1.1)`;
-                el.classList.add('magnetic-active');
-            });
-
-            el.addEventListener('mouseleave', (e) => {
-                el.style.transform = `translate(0px, 0px) scale(1)`;
-                el.classList.remove('magnetic-active');
-            });
-        });
-    }
 
 });
 
